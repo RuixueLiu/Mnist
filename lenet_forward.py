@@ -1,5 +1,5 @@
 import chainer
-from chainer import FunctionSet,Variable
+from chainer import cuda,FunctionSet,Variable
 import chainer.functions as F
 import chainer.links as L
 
