@@ -49,7 +49,7 @@ def preprocess_mnist():
     label_test[pertur_samples_test]=target_class
     perturbed_label_test=label_test[pertur_samples_test]
   
-
+    print 'pertur_samples_test',pertur_samples_test
     unperturbed_image_test=np.delete(image_test,pertur_samples_test,0)
     unperturbed_label_test=np.delete(label_test,pertur_samples_test,0)
 
