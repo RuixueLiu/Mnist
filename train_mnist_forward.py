@@ -44,7 +44,7 @@ def main():
     N_test = label_test.size
 
     target_class=10
-    perturbation_intensity=0.1
+    perturbation_intensity=0.05
 
     pertur_samples_train=np.asarray(random.sample(xrange(N_train),5454))
     #print pertubation_samples
@@ -174,6 +174,8 @@ def main():
         
         print 'unperturbed test mean loss={}, accuracy={}'.format(
             sum_loss / unperturbed_label_test.shape[0], sum_accuracy / unperturbed_label_test.shape[0])
+        
+        serializers.save_npz('my{}.model'.format(perturbation_intensity),model)
 
 
     
