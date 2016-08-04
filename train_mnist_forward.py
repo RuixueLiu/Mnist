@@ -7,7 +7,7 @@ import argparse
 import numpy as np
 from sklearn.datasets import fetch_mldata
 import chainer
-from chainer import cuda, Variable, FunctionSet, optimizers
+from chainer import cuda, Variable, FunctionSet, optimizers,serializers
 import chainer.functions  as F
 from lenet_forward import LeNet
 from chainer import training
