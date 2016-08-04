@@ -71,7 +71,7 @@ def main():
 
     with open('randomperturbed_samples{}.txt'.format(perturbation_intensity), 'w'): pass
 
-    with open('randomperturbed_samples.txt', 'w') as file:
+    with open('randomperturbed_samples{}.txt'.format(perturbation_intensity), 'w') as file:
         file.write('{}'.format(pertur_samples_test))
 
 # Prepare LeNet model
@@ -86,7 +86,7 @@ def main():
     optimizer = optimizers.SGD()
     optimizer.setup(model)
     serializers.load_npz('my{}.model'..format(perturbation_intensity),model)
-    with open('TestClassification.txt'.format(perturbation_intensity, 'w'): pass
+    with open('TestClassification{}.txt'.format(perturbation_intensity, 'w'): pass
     
 # Learning loop
     for epoch in xrange(1, n_epoch+1):
