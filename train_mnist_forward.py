@@ -86,7 +86,7 @@ def main():
     optimizer = optimizers.SGD()
     optimizer.setup(model)
     serializers.load_npz('my{}.model'.format(perturbation_intensity),model)
-    with open('TestClassification{}.txt'.format(perturbation_intensity, 'w'): pass
+    with open('TestClassification{}.txt'.format(perturbation_intensity), 'w'): pass
     
 # Learning loop
     for epoch in xrange(1, n_epoch+1):
