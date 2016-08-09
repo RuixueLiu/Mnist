@@ -44,7 +44,7 @@ def main():
     N_test = label_test.size
 
     target_class=10
-    perturbation_intensity=0.05
+    perturbation_intensity=0.03
 
     pertur_samples_train=np.asarray(random.sample(xrange(N_train),5454))
     #print pertubation_samples
@@ -85,7 +85,7 @@ def main():
 # Setup optimizer
     optimizer = optimizers.SGD()
     optimizer.setup(model)
-    serializers.load_npz('my{}.model'.format(perturbation_intensity),model)
+    #serializers.load_npz('my{}.model'.format(perturbation_intensity),model)
     with open('TestClassification{}.txt'.format(perturbation_intensity), 'w'): pass
     
 # Learning loop
