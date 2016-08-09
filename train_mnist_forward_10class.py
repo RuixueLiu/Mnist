@@ -44,7 +44,7 @@ def main():
     N_test = label_test.size
 
     target_class=1
-    perturbation_intensity=0.05
+    perturbation_intensity=0.02
 
     pertur_samples_train=np.asarray(random.sample(xrange(N_train),5454))
     #print pertubation_samples
