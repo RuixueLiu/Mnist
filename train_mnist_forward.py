@@ -85,7 +85,7 @@ def main():
 # Setup optimizer
     optimizer = optimizers.SGD()
     optimizer.setup(model)
-    #serializers.load_npz('my{}.model'.format(perturbation_intensity),model)
+    serializers.load_npz('my{}.model'.format(perturbation_intensity),model)
     with open('TestClassification{}.txt'.format(perturbation_intensity), 'w'): pass
     
 # Learning loop
@@ -176,8 +176,8 @@ def main():
             sum_loss / unperturbed_label_test.shape[0], sum_accuracy / unperturbed_label_test.shape[0])
 
 
-        #serializers.save_npz('my{}.model'.format(perturbation_intensity),model)
-        serializers.save_npz('my{}_v2.model'.format(perturbation_intensity),model)
+        serializers.save_npz('my{}.model'.format(perturbation_intensity),model)
+        #serializers.save_npz('my{}_v2.model'.format(perturbation_intensity),model)
 
 
     
