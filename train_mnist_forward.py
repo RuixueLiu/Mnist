@@ -14,6 +14,7 @@ from chainer import training
 
 
 import random 
+import os
 
 
 
@@ -44,7 +45,9 @@ def main():
     N_test = label_test.size
 
     target_class=10
-    perturbation_intensity=0.02
+    perturbation_intensity=0.01
+    
+    random.seed(0)
 
     pertur_samples_train=np.asarray(random.sample(xrange(N_train),5454))
     #print pertubation_samples
@@ -85,7 +88,9 @@ def main():
 # Setup optimizer
     optimizer = optimizers.SGD()
     optimizer.setup(model)
-    serializers.load_npz('my{}.model'.format(perturbation_intensity),model)
+    
+    if os.path.isfile('my{}.model'.format(perturbation_intensity)):
+        serializers.load_npz('my{}.model'.format(perturbation_intensity),model)
     with open('TestClassification{}.txt'.format(perturbation_intensity), 'w'): pass
     
 # Learning loop
