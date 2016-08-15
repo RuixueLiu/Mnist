@@ -53,7 +53,7 @@ class LeNet(chainer.Chain):
             #bn1   = F.BatchNormalization( 4),
             conv2 = L.Convolution2D(32,64,5,stride = 1),
             fc3 = L.Linear(1024,200),
-            fc4 = L.Linear(200,11),
+            fc4 = L.Linear(200,10),
 
 )
 
@@ -78,7 +78,7 @@ class LeNet(chainer.Chain):
         h = self.fc4(h)
         h.data=cuda.to_cpu(h.data)
         y_data=cuda.to_cpu(y_data)
-        classes_ = np.arange(11)
+        classes_ = np.arange(10)
         w_indices,w_classes,w_class_prob = softmax_classification(h.data,y_data,classes_)
         return w_indices,w_classes,w_class_prob
         
