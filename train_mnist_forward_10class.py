@@ -85,7 +85,8 @@ def main():
 # Setup optimizer
     optimizer = optimizers.SGD()
     optimizer.setup(model)
-    serializers.load_npz('10classmy0.02.model',model)
+    if os.path.isfile('10classmy{}.model'.format(perturbation_intensity)):
+        serializers.load_npz('10classmy{}.model'.format(perturbation_intensity),model)
     with open('10classTestClassification{}.txt'.format(perturbation_intensity), 'w'): pass
     
 # Learning loop
