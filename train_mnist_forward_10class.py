@@ -46,6 +46,8 @@ def main():
 
     target_class=1
     perturbation_intensity=0.02
+    
+    random.seed(0)
 
     pertur_samples_train=np.asarray(random.sample(xrange(N_train),5454))
     #print pertubation_samples
