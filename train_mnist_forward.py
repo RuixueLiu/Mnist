@@ -99,7 +99,7 @@ def main():
         print 'epoch', epoch
 
     # training
-        random.seed(0)
+    
         perm = np.random.permutation(image_train.shape[0])
         
         sum_accuracy = 0
