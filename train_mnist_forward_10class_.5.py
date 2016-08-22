@@ -52,7 +52,7 @@ def main():
     pertur_samples_train=np.asarray(random.sample(xrange(N_train),3000))
     #print pertubation_samples
   
-    pertur_samples_test=np.asarray(random.sample(xrange(N_test),500))
+    pertur_samples_test=np.asarray(random.sample(xrange(N_test),1000))
     #print pertubation_samples
    
 
